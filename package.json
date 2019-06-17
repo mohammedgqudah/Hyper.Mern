@@ -1,10 +1,10 @@
 {
   "name": "generator-hyper-mern",
   "description": "A fully function MERN stack generator running on the latest and greatest thats easy to get started with",
-  "version": "1.0.3",
+  "version": "1.5.0",
   "author": "moahmmed qudah - hyper <mohghq@gmail.com>",
   "bugs": {
-    "url": "https://github.com/sbernheim4/premiere-mern-stack/issues"
+    "url": "https://github.com/mohammedgqudah/Hyper.Mern/issues"
   },
   "dependencies": {
     "chalk": "^2.4.2",
@@ -14,7 +14,7 @@
   "files": [
     "app"
   ],
-  "homepage": "https://github.com/sbernheim4/premiere-mern-stack#readme",
+  "homepage": "https://github.com/mohammedgqudah/Hyper.Mern#readme",
   "keywords": [
     "express",
     "expressjs",
@@ -28,7 +28,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sbernheim4/premiere-mern-stack.git"
+    "url": "git+https://github.com/mohammedgqudah/Hyper.Mern.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
