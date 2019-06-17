@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400');
+@import "Button";
+#root {
+    height: 100vh;
+}
+.slink {
+    color: $black;
+    border-bottom: 2px solid darken(#eee, 50%);
+    margin: .5rem;
+    transition: all 200ms ease;
+    text-decoration: none;
+    cursor: pointer;
+    &:hover {
+        border-color: $black;
+    }
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}

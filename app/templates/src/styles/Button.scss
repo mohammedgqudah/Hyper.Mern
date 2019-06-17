@@ -1,0 +1,58 @@
+@import "settings";
+@import "shared";
+$btn-size-ratio: 1.2;
+@mixin Button(
+  $background: $primary,
+  $color: $white,
+  $border-radius: 100px,
+  $shadow: true
+) {
+  border: none;
+  border-radius: $border-radius;
+  // color: choose-contrast-color($background); // shared.scs0s
+  color: $color;
+  background-color: $background;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 1rem 0;
+  outline: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  transition: all 400ms ease-out;
+  padding: .5rem 1rem;
+  @if $shadow {
+    box-shadow: $shadow-1;
+  }
+  &--small {
+    font-size: 1rem / $btn-size-ratio;
+  }
+  &--large {
+    font-size: 1rem * $btn-size-ratio;
+  }
+  &--lower {
+    text-transform: lowercase;
+  }
+  &--outline {
+    background-color: $color;
+    color: $background;
+    border: 2px solid $background;
+    &:hover {
+      background-color: darken($color, 5%);
+    }
+  }
+  &:hover:not([class*="--outline"]) {
+    background: darken($background, 10%);
+  }
+  &:hover:has
+  &:active {
+    background: darken($background, 20%);
+  }
+  &[disabled] {
+    background-color: #eee;
+    color: $black;
+  }
+}
+
+.Button {
+  @include Button($shadow: false);
+}

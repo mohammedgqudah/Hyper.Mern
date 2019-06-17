@@ -1,0 +1,64 @@
+@import "settings.scss";
+@import "animate.scss";
+@import "shared.scss";
+.AuthPage {
+  display: flex;
+  justify-content: center;
+  .form-container {
+    transition: all 400ms ease-in-out;
+    position: relative;
+    @extend .animated;
+    animation: scaleIn 100ms ease-in;
+    &.done {
+      opacity: 0;
+    }
+    .main {
+      padding-top: 2rem;
+      .title {
+        color: $primary;
+      }
+      .small {
+        color: grey;
+      }
+    }
+    .title {
+      font-weight: 700;
+      font-size: 2rem;
+      margin: 1.5rem;
+      text-align: center;
+    }
+    .small {
+      font-size: 1rem;
+      font-weight: 200;
+      margin: 1.5rem;
+      text-align: center;
+    }
+    .fields {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow: hidden;
+      small.error {
+        font-style: italic;
+        color: #ff4444;
+      }
+      .Button {
+        transition: font-size 100ms ease-in;
+        @include flex-center;
+      }
+      // .Button.logging_in {
+      //   @extend .animated;
+      //   @extend .bounce;
+      //   @extend .infinite;
+      //   margin: 1.5rem;
+      //   font-size: 0;
+      //   width: 1rem;
+      //   height: 1rem;
+      //   overflow: hidden;
+      // }
+    }
+    .forgot-pass {
+      margin: 0.8rem;
+    }
+  }
+}

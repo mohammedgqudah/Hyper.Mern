@@ -1,0 +1,15 @@
+@import "settings";
+
+.Avatar {
+  position: relative;
+  &__img {
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    transition: all 300ms ease;
+    cursor: pointer;
+    &:hover {
+        box-shadow: $shadow-2;
+    }
+  }
+}

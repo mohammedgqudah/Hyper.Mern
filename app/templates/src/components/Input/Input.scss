@@ -1,0 +1,24 @@
+.InputContainer {
+  margin: 0.5rem 0;
+  .Input {
+    background-color: #eee;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 2rem 1fr;
+    align-items: center;
+    padding: 0.7rem 1rem;
+    &__input {
+      outline: none;
+      border: none;
+      background-color: transparent;
+      font-size: 1rem;
+    }
+    svg path {
+      fill: darken(#eee, 50%);
+    }
+  }
+  small.error {
+    font-style: italic;
+    color: #ff4444;
+  }
+}

@@ -1,0 +1,9 @@
+@import "settings.scss";
+
+.page404 {
+    height: $full-height;
+    background-color: $darkblue;
+    background-image: url("/assets/img/404.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+}
