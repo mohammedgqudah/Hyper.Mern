@@ -11,7 +11,7 @@ This stack gets you up and running with dev absolutes. Webpack Dev Server for HM
 - mongodb installed and in path.
 
 ## Features
-- Beautiful User Interface + Kawaii 404 page. thanks to [react-kawaii](https://github.com/miukimiu/react-kawaii)
+- Beautiful User Interface + Kawaii 404 page (thanks to [react-kawaii](https://github.com/miukimiu/react-kawaii))
 - I18n
 - Jwt Authentication API + Login/Signup Routes & Forms
 - A Project Structure That Makes Sense
