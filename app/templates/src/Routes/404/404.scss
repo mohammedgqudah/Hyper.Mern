@@ -1,9 +1,18 @@
 @import "settings.scss";
+@import "shared";
 
 .page404 {
-    height: $full-height;
-    background-color: $darkblue;
-    background-image: url("/assets/img/404.gif");
-    background-repeat: no-repeat;
-    background-position: center;
+  height: $full-height;
+  @include flex-center;
+  flex-direction: column;
+  .ghost {
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+  h2 {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+  }
 }
