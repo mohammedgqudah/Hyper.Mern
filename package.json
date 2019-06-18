@@ -1,7 +1,7 @@
 {
   "name": "generator-hyper-mern",
   "description": "A fully function MERN stack generator running on the latest and greatest thats easy to get started with",
-  "version": "1.5.0",
+  "version": "0.1.0",
   "author": "moahmmed qudah - hyper <mohghq@gmail.com>",
   "bugs": {
     "url": "https://github.com/mohammedgqudah/Hyper.Mern/issues"
