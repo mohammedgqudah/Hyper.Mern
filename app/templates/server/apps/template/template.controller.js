@@ -1,4 +1,4 @@
-const Joi = require('joi');
+const Joi = require('@hapi/joi');
 
 const { SAMPLE } = require('./template.validators');
 // const {  } = require('../../db/models/model.js')

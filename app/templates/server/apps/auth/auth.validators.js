@@ -1,4 +1,4 @@
-const Joi = require('joi');
+const Joi = require('@hapi/joi');
 module.exports.LOGIN_SCHEMA = Joi.object()
     .options({ abortEarly: false })
     .keys({
