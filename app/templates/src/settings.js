@@ -9,5 +9,10 @@ export default {
     { name: "Contact us", to: "/contact-us" },
     { name: "About us", to: "/about-us" }
   ],
-  SERVER: "http://localhost:3000"
+  SERVER: "http://localhost:3000",
+  SOCIAL: {
+    GITHUB: "https://github.com/mohammedgqudah/Hyper.Mern",
+    TWITTER: "https://twitter.com/",
+    FACEBOOK: "https://facebook.com/",
+  }
 };

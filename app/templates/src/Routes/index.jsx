@@ -11,7 +11,7 @@ import { Route, Switch } from 'react-router-dom';
 import Navbar from "../components/Navbar/Navbar.jsx";
 
 // Import lazy loaded route components
-import { Home, ErrorPage } from './LazyLoadRoutes.jsx';
+import { Home, ErrorPage, ContactUs } from './LazyLoadRoutes.jsx';
 import login from './login-signup/login.jsx';
 import signup from './login-signup/signup.jsx';
 import { Scrollbars } from 'react-custom-scrollbars';
@@ -27,6 +27,7 @@ class Routes extends Component {
 				<Navbar />
 				<Switch className="main">
 					<Route exact path='/' component={Home}/>
+					<Route path='/contact-us' component={ContactUs}/>
 					<Route path="/login" component={login}/>
 					<Route path="/signup" component={signup}/>
 					<Route component={ErrorPage}/>

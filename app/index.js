@@ -130,7 +130,7 @@ module.exports = class extends Generator {
 
     this.log("🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉");
     logCyan("Congrats! You're ready to go!");
-    logCyan("Run `npm start:dev:all` to get started");
+    logCyan("Run `npm start start:dev:all` to get started");
     this.log("🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉");
   }
 };
