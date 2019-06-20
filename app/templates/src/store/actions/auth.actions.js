@@ -14,9 +14,9 @@ export const LOGIN = (_data, success) => {
     dispatch({ type: REMOVE_LOGIN_ERROR });
     // TODO: use imports/schemas
     let errors = {};
-    if (_data.id.trim() == "") errors.email = "Email can't be empty";
+    if (_data.id.trim() == "") errors.email = "email_can't_be_empty";
     if (_data.password.trim() == "")
-      errors.password = "password can't be empty";
+      errors.password = "password_can't_be_empty";
     if (Object.keys(errors).length > 0)
       dispatch({
         type: SET_LOGIN_ERROR,
@@ -35,7 +35,7 @@ export const LOGIN = (_data, success) => {
             dispatch({
               type: SET_LOGIN_ERROR,
               payload: {
-                main: "User not found, double check your email/password"
+                main: "user_not_found"
               }
             });
             break;
@@ -45,7 +45,7 @@ export const LOGIN = (_data, success) => {
               type: SET_LOGIN_ERROR,
               payload: {
                 main:
-                  "Something went wrong, try again or check the internet connection"
+                  "something_went_wrong"
               }
             });
             break;
@@ -60,11 +60,12 @@ export const SIGNUP = (_data, success) => {
   return async dispatch => {
     dispatch({ type: REMOVE_SIGNUP_ERROR });
     let errors = {};
-    if (_data.email.trim() == "") errors.email = "Email can't be empty";
-    if (!isEmail(_data.email)) errors.email = "Enter a valid Email";
+    if (_data.email.trim() == "") errors.email = "email_can't_be_empty";
+    // FIXME: validate before checking it's empty
+    if (!isEmail(_data.email)) errors.email = "enter_a_valid_email";
     if (_data.password.trim() == "")
-      errors.password = "password can't be empty";
-    if (_data.name.trim() == "") errors.name = "name can't be empty";
+      errors.password = "password_can't_be_empty";
+    if (_data.name.trim() == "") errors.name = "name_can't_be_empty";
     if (Object.keys(errors).length > 0)
       dispatch({
         type: SET_SIGNUP_ERROR,
@@ -88,7 +89,7 @@ export const SIGNUP = (_data, success) => {
             return dispatch({
               type: SET_SIGNUP_ERROR,
               payload: {
-                [duplicated]: `this ${duplicated} is already in use`
+                [duplicated]: `already_in_use`,
               }
             });
             break;
@@ -103,7 +104,7 @@ export const SIGNUP = (_data, success) => {
               type: SET_SIGNUP_ERROR,
               payload: {
                 main:
-                  "Something went wrong, try again or check the internet connection"
+                  "something_went_wrong"
               }
             });
             break;

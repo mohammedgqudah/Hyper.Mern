@@ -1,7 +1,6 @@
 export default {
   AuthRedirectUrl: "/",
   AppName: "<%= appName %>",
-  description: "<%= description %>",
   AfterAuthDelay: 1000,
   links: [
     { name: "Home", to: "/", exact: true },

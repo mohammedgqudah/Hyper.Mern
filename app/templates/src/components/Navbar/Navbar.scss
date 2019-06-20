@@ -17,6 +17,9 @@
     text-shadow: 3px 3px rgba(0, 0, 0, 0.13);
     text-align: left;
   }
+  .vr {
+    margin: 0 .5rem;
+  }
   .links {
     display: flex;
     justify-content: center;
@@ -36,8 +39,9 @@
   }
   .user-nav {
     display: flex;
+    justify-content: flex-end;
     align-items: center;
-    direction: rtl;
+    align-items: center;
     &__Link {
       @include Button($white, $primary);
       margin: 0 0.5rem;

@@ -9,6 +9,7 @@ import Input from "../../components/Input/Input.jsx";
 import { LOGIN, SIGNUP } from "../../store/actions/auth.actions.js";
 import settings from "../../settings";
 import DelayedRedirect from "../../components/DelayedRedirect.jsx";
+import Trans from "../../components/i18n/Trans";
 
 @connect(
   state => ({ login_data: state.auth.login }),
@@ -51,8 +52,12 @@ class Auth extends React.Component {
         )}
         <div className={`form-container ${logged_in && "done"}`}>
           <div className="main">
-            <h3 className="title">Sign in to {settings.AppName}</h3>
-            <h5 className="small">fill out the fields</h5>
+            <h3 className="title">
+              <Trans value="login" />
+            </h3>
+            <h5 className="small">
+              <Trans value="fill_out_the_fields" />
+            </h5>
             <form onSubmit={this.onLogin}>
               <div className="fields">
                 <Input
@@ -61,7 +66,7 @@ class Auth extends React.Component {
                   icon={mdiEmailOutline}
                   onChange={this.onEmailChange}
                   data={id}
-                  error={login_data.email}
+                  error={<Trans value={login_data.email} />}
                   name={"email"}
                 />
                 <Input
@@ -71,13 +76,17 @@ class Auth extends React.Component {
                   icon={mdiKeyOutline}
                   onChange={this.onPasswordChange}
                   data={password}
-                  error={login_data.password}
+                  error={<Trans value={login_data.password} />}
                   name="password"
                 />
-                <small className="error">{login_data.main}</small>
-                <a className="forgot-pass">Forgot your password?</a>
+                <small className="error">
+                  <Trans value={login_data.main} />
+                </small>
+                <Link className="forgot-pass slink" to="/">
+                  <Trans value="forgot_your_password?" />
+                </Link>
                 <Button
-                  content="Login"
+                  content={<Trans value="login" />}
                   type="submit"
                   className={className}
                   disabled={login_data.logging_in}

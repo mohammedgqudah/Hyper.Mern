@@ -4,3 +4,4 @@ export const SET_USER = "SET_USER";
 export const REMOVE_SIGNUP_ERROR = "REMOVE_SIGNUP_ERROR";
 export const SET_SIGNUP_ERROR = "SET_SIGNUP_ERROR";
 export const START_LOGOUT = "START_LOGOUT";
+export const CHANGE_LANGUAGE = "CHANGE_LANGUAGE";

@@ -10,6 +10,7 @@ import Input from "../../components/Input/Input.jsx";
 import { LOGIN, SIGNUP } from "../../store/actions/auth.actions.js";
 import settings from "../../settings";
 import DelayedRedirect from "../../components/DelayedRedirect.jsx";
+import Trans from "../../components/i18n/Trans";
 
 @connect(
   state => ({ signup_data: state.auth.signup }),
@@ -57,8 +58,12 @@ class Auth extends React.Component {
         )}
         <div className={`form-container ${logged_in && "done"}`}>
           <div className="main">
-            <h3 className="title">Create an account</h3>
-            <h5 className="small">fill out the fields</h5>
+            <h3 className="title">
+              <Trans value="create_an_account" />
+            </h3>
+            <h5 className="small">
+              <Trans value="fill_out_the_fields" />
+            </h5>
             <form onSubmit={this.onSignup}>
               <div className="fields">
                 <Input
@@ -67,7 +72,7 @@ class Auth extends React.Component {
                   icon={mdiEmailOutline}
                   onChange={this.onEmailChange}
                   data={email}
-                  error={signup_data.email}
+                  error={<Trans value={signup_data.email} />}
                 />
                 <Input
                   placeholder={"Name"}
@@ -75,7 +80,7 @@ class Auth extends React.Component {
                   icon={mdiAccountCircleOutline}
                   onChange={this.onNameChange}
                   data={name}
-                  error={signup_data.name}
+                  error={<Trans value={signup_data.name} />}
                 />
                 <Input
                   type="password"
@@ -84,12 +89,16 @@ class Auth extends React.Component {
                   icon={mdiKeyOutline}
                   onChange={this.onPasswordChange}
                   data={password}
-                  error={signup_data.password}
+                  error={<Trans value={signup_data.password} />}
                 />
-                <small className="error">{signup_data.main}</small>
-                <Link to="/login">Have an account?</Link>
+                <small className="error">
+                  <Trans value={signup_data.main}/>
+                </small>
+                <Link to="/login" className="slink">
+                  <Trans value="already_have_an_account?" />
+                </Link>
                 <Button
-                  content="Signup"
+                  content={<Trans value="signup" />}
                   type="submit"
                   className={className}
                   disabled={signup_data.signing_up}

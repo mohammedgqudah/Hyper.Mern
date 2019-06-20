@@ -17,7 +17,8 @@ module.exports = class extends Generator {
     this.defaults = {
       appName: this.options["app-name"] || "Hyper Mern",
       email: this.user.git.email(),
-      gitName: this.user.git.name()
+      gitName: this.user.git.name(),
+      description: "Hey, this is the default description"
     };
     this.answers = this.defaults;
     if (!!!this.options["yes"]) {
@@ -33,7 +34,8 @@ module.exports = class extends Generator {
         },
         {
           name: "description",
-          message: "Description:"
+          message: "Description:",
+          default: this.defaults.description
         },
         {
           name: "name",
