@@ -60,9 +60,8 @@ export const SIGNUP = (_data, success) => {
   return async dispatch => {
     dispatch({ type: REMOVE_SIGNUP_ERROR });
     let errors = {};
-    if (_data.email.trim() == "") errors.email = "email_can't_be_empty";
-    // FIXME: validate before checking it's empty
     if (!isEmail(_data.email)) errors.email = "enter_a_valid_email";
+    if (_data.email.trim() == "") errors.email = "email_can't_be_empty";
     if (_data.password.trim() == "")
       errors.password = "password_can't_be_empty";
     if (_data.name.trim() == "") errors.name = "name_can't_be_empty";
