@@ -1,9 +1,10 @@
-const express = require('express');
+import express from 'express';
+
 const app = express.Router();
-const {  } = require('./template.controller');
+import {  } from './template.controller';
 
 // passport.authenticate('jwt', { session: false })
 
 // e.g app.post()
 
-module.exports =  app;
+export default app;

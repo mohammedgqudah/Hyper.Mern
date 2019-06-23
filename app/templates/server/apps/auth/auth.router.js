@@ -1,8 +1,10 @@
-const express = require('express');
-const app = express.Router();
-const { LOGIN, SIGNUP} = require('./auth.controller');
-const passport = require('passport');
+import express from "express";
+import passport from "passport";
 
-app.post('/login', LOGIN);
-app.post('/signup', SIGNUP);
-module.exports =  app;
+import { LOGIN, SIGNUP } from "./auth.controller";
+const app = express.Router();
+
+app.post("/login", LOGIN);
+app.post("/signup", SIGNUP);
+
+export default app;

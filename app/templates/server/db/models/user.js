@@ -1,10 +1,12 @@
-const mongoose = require("mongoose");
-const MBUV = require("mongoose-beautiful-unique-validation");
-const fs = require("fs");
-const path = require("path");
-const Identicon = require('identicon.js');
-const md5 = require("md5");
-const SETTINGS = require("../../settings");
+import * as mongoose from "mongoose";
+import MBUV from "mongoose-beautiful-unique-validation";
+import fs from "fs";
+import path from "path";
+import Identicon from "identicon.js";
+import md5 from "md5";
+
+import SETTINGS from "../../settings";
+
 const UserSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -25,20 +27,23 @@ const UserSchema = new mongoose.Schema({
     type: String
   }
 });
+
 UserSchema.pre("save", async function(next) {
   let id = md5(this._id);
   this.avatar = id;
-  let icon = new Identicon(md5(this.id), 420)
+  let icon = new Identicon(md5(this.id), 420);
   let IMG_FOLDER = path.join(
     SETTINGS.STATIC_FILES_PATH,
     "assets",
     "img",
     "avatars"
   );
-  fs.writeFileSync(path.join(IMG_FOLDER, `${id}.png`), icon, 'base64');
+  fs.writeFileSync(path.join(IMG_FOLDER, `${id}.png`), icon, "base64");
   next();
 });
+
 UserSchema.plugin(MBUV);
 const User = mongoose.model("User", UserSchema);
-module.exports = User;
-module.exports.UserSchema = UserSchema;
+
+export default User;
+export { UserSchema };

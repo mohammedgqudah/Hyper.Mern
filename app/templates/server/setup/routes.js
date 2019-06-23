@@ -1,6 +1,6 @@
-const path = require('path');
+import path from 'path';
 
-module.exports = (app, io) => {
+export default (app, io) => {
   app.use((req, res, next) => {req.io = io;next()});
   app.use('/api', require('../api.js'));
   app.use('/*', (req, res) => {

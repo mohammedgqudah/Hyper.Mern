@@ -1,7 +1,9 @@
-const session = require('express-session');
-const mongoose = require('mongoose');
+import session from 'express-session';
+import mongoose from 'mongoose';
+
 const MongoStore = require('connect-mongo')(session);
-module.exports = app => {
+
+export default app => {
   app.use(
     session({
       secret: process.env.SECRET,

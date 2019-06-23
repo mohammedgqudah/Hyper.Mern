@@ -1,13 +1,14 @@
 /* eslint no-undefined: "off" */
 
-const path = require('path');
-const express = require('express');
-const app = express();
+import path from 'path';
+import express  from 'express';
+import compression  from 'compression';
+import helmet  from 'helmet';
+import bodyParser  from 'body-parser';
+
+const app  = express();
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
-const compression = require('compression');
-const helmet = require('helmet');
-const bodyParser = require('body-parser');
 
 require('dotenv').config();
 require('dotenv').config({ path: path.join(__dirname, '..', '.env.base') });
@@ -27,4 +28,4 @@ require('./setup/routes')(app, io);
 require('./setup/socketio')(io);
 require('./setup/start')(server);
 
-module.exports = app;
+export default app;

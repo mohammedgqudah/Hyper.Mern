@@ -1,6 +1,6 @@
-const cors = require('cors');
+import cors from 'cors';
 
-module.exports = app => {
+export default app => {
   const whitelist = ['http://localhost:8080'];
   const corsOptions = {
     origin: function(origin, callback) {

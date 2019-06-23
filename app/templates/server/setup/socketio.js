@@ -1,6 +1,6 @@
-const chalk = require("chalk");
+import chalk from 'chalk';
 
-module.exports = io => {
+export default io => {
   io.on("connection", function(socket) {
     console.log(chalk.green(`new socket connection: ${socket.id}`));
     socket.on("disconnect", () => {

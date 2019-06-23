@@ -1,5 +1,6 @@
-const Passport = require("passport");
-const PassportJWT = require("passport-jwt");
+import Passport from "passport";
+import PassportJWT from "passport-jwt";
+
 const configJWTStrategy = () => {
   let options = {
     jwtFromRequest: PassportJWT.ExtractJwt.fromAuthHeaderAsBearerToken(),
@@ -18,4 +19,4 @@ const configJWTStrategy = () => {
     })
   );
 };
-module.exports = { configJWTStrategy };
+export { configJWTStrategy };

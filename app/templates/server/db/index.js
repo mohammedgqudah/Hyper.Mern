@@ -1,23 +1,26 @@
-const mongoose = require('mongoose');
-const chalk = require('chalk');
-
-mongoose.connect(process.env.DB_URI, { useNewUrlParser: true });
-const db = mongoose.connection;
+import mongoose from "mongoose";
+import chalk from "chalk";
 
 // Require our models -- this will register the models into mongoose
 // so the rest of the application can simply call mongoose.model('User')
 // anywhere the User model needs to be used.
-require('./models');
+import "./models";
 
-const startDbPromise = new Promise(function (resolve, reject) {
-	db.on('open', resolve);
-	db.on('error', console.error.bind(console, 'connection error:'));
+console.log(chalk.yellow("Opening connection to MongoDB . . ."));
+
+mongoose
+  .connect(process.env.DB_URI, { useNewUrlParser: true, useCreateIndex: true })
+  .catch(e => {
+    console.log(chalk.red(e.message));
+  });
+
+const db = mongoose.connection;
+
+db.on("open", function(ref) {
+  console.log("MongoDB connection opened!");
+});
+const startDbPromise = new Promise(function(resolve, reject) {
+  db.on("open", resolve);
 });
 
-console.log(chalk.yellow('Opening connection to MongoDB . . .'));
-
-startDbPromise.then( () => {
-	console.log(chalk.blue('MongoDB connection opened!'));
-});
-
-module.exports = startDbPromise;
+export default startDbPromise;

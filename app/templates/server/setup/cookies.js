@@ -1,5 +1,5 @@
-const cookieParser = require("cookie-parser");
+import cookieParser from "cookie-parser";
 
-module.exports = app => {
+export default app => {
   app.use(cookieParser());
 };

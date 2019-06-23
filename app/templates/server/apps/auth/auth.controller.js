@@ -1,10 +1,10 @@
-const Joi = require("@hapi/joi");
-const mongoose = require("mongoose");
+import Joi from "@hapi/joi";
+import mongoose from "mongoose";
+
+import { hashPassword, comparePassword, token } from "./auth.service";
+import { LOGIN_SCHEMA, SIGNUP_SCHEMA } from "./auth.validators";
 
 const User = mongoose.model("User");
-
-const { hashPassword, comparePassword, token } = require("./auth.service");
-const { LOGIN_SCHEMA, SIGNUP_SCHEMA } = require("./auth.validators");
 
 const LOGIN = async (req, res) => {
   // @id could be name or email
@@ -56,4 +56,4 @@ const SIGNUP = async (req, res) => {
     }
   }
 };
-module.exports = { LOGIN, SIGNUP };
+export { LOGIN, SIGNUP };
