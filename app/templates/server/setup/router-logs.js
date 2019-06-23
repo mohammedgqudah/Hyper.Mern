@@ -15,13 +15,14 @@ export default app => {
     console.log(
       util.format(chalk.cyan("%s: %s"), "BODY    ", util.inspect(req.body))
     );
-    console.log(
-      util.format(
-        chalk.cyan("%s: %s"),
-        "COOKIES    ",
-        util.inspect(req.cookies)
-      )
-    );
+    // Uncomment to print cookies ¯\_(ツ)_/¯
+    // console.log(
+    //   util.format(
+    //     chalk.cyan("%s: %s"),
+    //     "COOKIES    ",
+    //     util.inspect(req.cookies)
+    //   )
+    // );
     next();
   });
 };
