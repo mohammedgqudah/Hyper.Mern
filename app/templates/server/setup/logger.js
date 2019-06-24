@@ -26,9 +26,10 @@ let LOGGER = new Logger();
 
 const inject = app => {
   app.logger = LOGGER;
-  if (!!!app.use)
+  if (app.use)
     app.use((req, res, next) => {
       req.logger = logger;
+      next();
     });
 };
 
