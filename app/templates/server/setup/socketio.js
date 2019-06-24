@@ -1,10 +1,11 @@
 import chalk from 'chalk';
+import { LOGGER } from './logger';
 
 export default io => {
   io.on("connection", function(socket) {
-    console.log(chalk.green(`new socket connection: ${socket.id}`));
+    LOGGER.info(`New socket connection: ${socket.id}`);
     socket.on("disconnect", () => {
-      console.log(chalk.green(`socket ${socket.id} disconnected`));
+      LOGGER.info(`Socket ${socket.id} disconnected`);
     });
   });
 };
