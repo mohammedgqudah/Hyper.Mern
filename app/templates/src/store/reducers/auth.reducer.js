@@ -4,13 +4,13 @@ import {
   REMOVE_LOGIN_ERROR,
   SET_SIGNUP_ERROR,
   SET_LOGIN_ERROR
-} from "../actions/constants";
+} from '../actions/constants';
 
 export default (state, { payload, type }) => {
   switch (type) {
     case START_LOGOUT: {
-      localStorage.removeItem("USER");
-      localStorage.removeItem("USER_TOKEN");
+      localStorage.removeItem('USER');
+      localStorage.removeItem('USER_TOKEN');
       return {
         ...state,
         user: undefined,
@@ -21,8 +21,8 @@ export default (state, { payload, type }) => {
     case SET_USER: {
       let { token, user } = payload;
       console.log(user);
-      localStorage.setItem("USER", JSON.stringify(user));
-      localStorage.setItem("USER_TOKEN", JSON.stringify(token));
+      localStorage.setItem('USER', JSON.stringify(user));
+      localStorage.setItem('USER_TOKEN', JSON.stringify(token));
       return {
         ...state,
         user: { token, ...user },

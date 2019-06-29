@@ -24,6 +24,7 @@
 	},
 
 	"rules": {
+		"prettier/prettier": "error",
 		"react/jsx-uses-vars": 2,
 		"camelcase": 0,
 		"no-unused-vars": 0,
@@ -36,7 +37,7 @@
 		"no-unreachable": 1,
 		"use-isnan": 2,
 		"valid-jsdoc": 2,
-		"no-alert": 2,
+		"no-alert": 1,
 		"no-multi-spaces": 1,
 		"no-native-reassign": 1,
 		"no-octal": 1,
@@ -51,7 +52,9 @@
 		"no-var": 2
 	},
 	"plugins": [
+		"prettier",
 		"react"
-	]
+	],
+	"extends": ["plugin:prettier/recommended"]
 }
 

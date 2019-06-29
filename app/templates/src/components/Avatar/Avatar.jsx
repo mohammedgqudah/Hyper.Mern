@@ -1,16 +1,16 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
-import Menu from "@material-ui/core/Menu";
-import MenuItem from "@material-ui/core/MenuItem";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
 
-import "./Avatar.scss";
-import getAvatar from "../../helpers/getAvatar";
-import { LOGOUT } from "../../store/actions/auth.actions";
+import './Avatar.scss';
+import getAvatar from '../../helpers/getAvatar';
+import { LOGOUT } from '../../store/actions/auth.actions';
 
 @connect(
   state => ({ user: state.user }),
-  d => ({dispath: d})
+  d => ({ dispath: d })
 )
 class Avatar extends Component {
   state = { open: false, anchorEl: null };
@@ -22,11 +22,11 @@ class Avatar extends Component {
   };
   onProfile = () => {
     this.onClose();
-    this.props.history.push("/profile");
+    this.props.history.push('/profile');
   };
   onLogout = () => {
     this.onClose();
-    this.props.dispath(LOGOUT())
+    this.props.dispath(LOGOUT());
   };
   render() {
     const { user } = this.props;

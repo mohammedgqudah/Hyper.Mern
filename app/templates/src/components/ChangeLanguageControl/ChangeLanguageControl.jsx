@@ -1,12 +1,12 @@
-import React, { Component } from "react";
-import { Icon } from "@mdi/react";
-import { mdiTranslate } from "@mdi/js";
-import Menu from "@material-ui/core/Menu";
-import MenuItem from "@material-ui/core/MenuItem";
-import { connect } from "react-redux";
+import React, { Component } from 'react';
+import { Icon } from '@mdi/react';
+import { mdiTranslate } from '@mdi/js';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
+import { connect } from 'react-redux';
 
-import "./ChangeLanguageControl.scss";
-import { CHANGE_LANGUAGE } from "../../store/actions/constants";
+import './ChangeLanguageControl.scss';
+import { CHANGE_LANGUAGE } from '../../store/actions/constants';
 
 @connect(
   null,
@@ -47,7 +47,7 @@ class ChangeLanguageControl extends Component {
           open={Boolean(anchorEl)}
           onClose={this.onClose}
         >
-          <MenuItem onClick={this.changeLang("en")}>
+          <MenuItem onClick={this.changeLang('en')}>
             <div className="lang-item">
               <img
                 src="/assets/img/icons/english.png"
@@ -57,7 +57,7 @@ class ChangeLanguageControl extends Component {
               English
             </div>
           </MenuItem>
-          <MenuItem onClick={this.changeLang("ar")}>
+          <MenuItem onClick={this.changeLang('ar')}>
             <div className="lang-item">
               <img
                 src="https://www.shareicon.net/download/2016/07/04/637192_arabia_512x512.png"

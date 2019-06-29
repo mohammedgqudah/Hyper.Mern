@@ -1,12 +1,12 @@
-import React, { Component } from "react";
-import { NavLink as Link } from "react-router-dom";
-import { connect } from "react-redux";
+import React, { Component } from 'react';
+import { NavLink as Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-import styles from "./navbar.module.scss";
-import settings from "../../settings";
-import Avatar from "../Avatar/Avatar.jsx";
-import ChangeLanguageControl from "../ChangeLanguageControl/ChangeLanguageControl";
-import Trans from "../i18n/Trans";
+import styles from './navbar.module.scss';
+import settings from '../../settings';
+import Avatar from '../Avatar/Avatar.jsx';
+import ChangeLanguageControl from '../ChangeLanguageControl/ChangeLanguageControl';
+import Trans from '../i18n/Trans';
 
 console.log('NAVBAR STYLES', styles);
 
@@ -42,14 +42,14 @@ class Navbar extends Component {
           ) : (
             <div>
               <Link
-                to={"/login"}
+                to={'/login'}
                 className={`${styles.button} ${styles.button}--small ${styles.button}`}
               >
                 <Trans value="login" />
               </Link>
               {/* FIXME: outline not working */}
               <Link
-                to={"/signup"}
+                to={'/signup'}
                 className={`${styles.button} ${styles.button}--small ${styles.button}--outline`}
               >
                 <Trans value="signup" />

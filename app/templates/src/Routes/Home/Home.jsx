@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import styles from "./home.module.scss";
-import wave from "../../helpers/wave";
-import settings from "../../settings";
-import Trans from "../../components/i18n/Trans";
+import React, { Component } from 'react';
+import styles from './home.module.scss';
+import wave from '../../helpers/wave';
+import settings from '../../settings';
+import Trans from '../../components/i18n/Trans';
 
 class Home extends Component {
   constructor(props) {
@@ -16,7 +16,7 @@ class Home extends Component {
   render() {
     return (
       <div className={styles.home}>
-        <canvas id={styles.waves} ref={(e)=>this.waves=e}/>
+        <canvas id={styles.waves} ref={e => (this.waves = e)} />
         <h2 className={styles.title}>
           <Trans value="welcome" /> {settings.AppName}
         </h2>

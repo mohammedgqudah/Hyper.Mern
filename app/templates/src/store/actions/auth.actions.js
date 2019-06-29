@@ -1,5 +1,5 @@
-import Axios from "../../axios/axios.base";
-import { isEmail } from "validator";
+import Axios from '../../axios/axios.base';
+import { isEmail } from 'validator';
 import {
   REMOVE_LOGIN_ERROR,
   SET_LOGIN_ERROR,
@@ -7,15 +7,15 @@ import {
   REMOVE_SIGNUP_ERROR,
   SET_SIGNUP_ERROR,
   START_LOGOUT
-} from "./constants";
+} from './constants';
 
 export const LOGIN = (_data, success) => {
   return async dispatch => {
     dispatch({ type: REMOVE_LOGIN_ERROR });
     // TODO: use imports/schemas
     let errors = {};
-    if (_data.id.trim() == "") errors.email = "email_can't_be_empty";
-    if (_data.password.trim() == "")
+    if (_data.id.trim() == '') errors.email = "email_can't_be_empty";
+    if (_data.password.trim() == '')
       errors.password = "password_can't_be_empty";
     if (Object.keys(errors).length > 0)
       dispatch({
@@ -24,18 +24,18 @@ export const LOGIN = (_data, success) => {
       });
     else {
       try {
-        let { data } = await Axios.post("/auth/login", _data);
+        let { data } = await Axios.post('/auth/login', _data);
         success();
         dispatch({ type: SET_USER, payload: data });
       } catch (error) {
-        console.log("action:login failed", error);
+        console.log('action:login failed', error);
         switch (error.response.status) {
           case 400: {
             // user not found
             dispatch({
               type: SET_LOGIN_ERROR,
               payload: {
-                main: "user_not_found"
+                main: 'user_not_found'
               }
             });
             break;
@@ -44,8 +44,7 @@ export const LOGIN = (_data, success) => {
             dispatch({
               type: SET_LOGIN_ERROR,
               payload: {
-                main:
-                  "something_went_wrong"
+                main: 'something_went_wrong'
               }
             });
             break;
@@ -56,15 +55,15 @@ export const LOGIN = (_data, success) => {
   };
 };
 export const SIGNUP = (_data, success) => {
-  console.log("----------------------------------------");
+  console.log('----------------------------------------');
   return async dispatch => {
     dispatch({ type: REMOVE_SIGNUP_ERROR });
     let errors = {};
-    if (!isEmail(_data.email)) errors.email = "enter_a_valid_email";
-    if (_data.email.trim() == "") errors.email = "email_can't_be_empty";
-    if (_data.password.trim() == "")
+    if (!isEmail(_data.email)) errors.email = 'enter_a_valid_email';
+    if (_data.email.trim() == '') errors.email = "email_can't_be_empty";
+    if (_data.password.trim() == '')
       errors.password = "password_can't_be_empty";
-    if (_data.name.trim() == "") errors.name = "name_can't_be_empty";
+    if (_data.name.trim() == '') errors.name = "name_can't_be_empty";
     if (Object.keys(errors).length > 0)
       dispatch({
         type: SET_SIGNUP_ERROR,
@@ -72,23 +71,23 @@ export const SIGNUP = (_data, success) => {
       });
     else {
       try {
-        let { data } = await Axios.post("/auth/signup", _data);
-        console.log("success:response", data);
+        let { data } = await Axios.post('/auth/signup', _data);
+        console.log('success:response', data);
         success();
         dispatch({
           type: SET_USER,
           payload: data
         });
       } catch (error) {
-        console.log("error", error);
-        console.log("error:response", error.response);
+        console.log('error', error);
+        console.log('error:response', error.response);
         switch (error.response.status) {
           case 409: {
             let duplicated = error.response.data.errors[0];
             return dispatch({
               type: SET_SIGNUP_ERROR,
               payload: {
-                [duplicated]: `already_in_use`,
+                [duplicated]: `already_in_use`
               }
             });
             break;
@@ -102,8 +101,7 @@ export const SIGNUP = (_data, success) => {
             dispatch({
               type: SET_SIGNUP_ERROR,
               payload: {
-                main:
-                  "something_went_wrong"
+                main: 'something_went_wrong'
               }
             });
             break;

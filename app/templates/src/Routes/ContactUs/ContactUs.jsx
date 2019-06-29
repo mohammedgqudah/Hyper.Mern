@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 import styles from './contact-us.module.scss';
-import settings from "../../settings";
-import SocialLink from "../../components/SocialLink/SocialLink.jsx";
-import Trans from "../../components/i18n/Trans";
-import Dir from "../../components/i18n/Dir";
+import settings from '../../settings';
+import SocialLink from '../../components/SocialLink/SocialLink.jsx';
+import Trans from '../../components/i18n/Trans';
+import Dir from '../../components/i18n/Dir';
 
 export default class ContactUs extends Component {
   render() {
