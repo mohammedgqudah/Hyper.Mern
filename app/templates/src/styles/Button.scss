@@ -39,7 +39,7 @@ $btn-size-ratio: 1.2;
       background-color: darken($color, 5%);
     }
   }
-  &:hover:not([class*="--outline"]) {
+  &:hover:not([class*="--outline"]):not([disabled]) {
     background: darken($background, 10%);
   }
   &:hover:has
