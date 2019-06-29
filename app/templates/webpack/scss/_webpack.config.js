@@ -43,18 +43,29 @@ module.exports = () => {
 				// css-loader - allows for using import or require statements in the jsx
 				// style-loader - injects the css into the browser in a style tag
 				{
-					test: /\.scss$/,
-					use: ["style-loader", "css-loader", "postcss-loader",
+					test: /\.module\.scss$/,
+					use: [
+						"style-loader", 
+						{ loader:"css-loader", options: { modules: true, localIdentName: '[local]--[hash:base64:5]' } }, 
+						"postcss-loader",
 						{ loader: "sass-loader", options: { includePaths: ["./src/styles"] } }]
 				},
-
+				{
+					test: /\.scss$/,
+					exclude: /\.module\.scss$/,
+					use: [
+						"style-loader", 
+						"css-loader", 
+						"postcss-loader",
+						{ loader: "sass-loader", options: { includePaths: ["./src/styles"] } }]
+				},
 				{
 					test: /\.css$/,
 					use: ["style-loader", "css-loader", "postcss-loader"]
 				}
 			]
 		},
-
+		devtool: 'eval-source-map',
 		mode: process.env.NODE_ENV || 'development',
 
 		resolve: {

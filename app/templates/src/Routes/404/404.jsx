@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Ghost } from "react-kawaii";
 
-import "./404.scss";
+import styles from "./404.module.scss";
 import Trans from "../../components/i18n/Trans";
 
 class ErrorPage extends Component {
@@ -11,9 +11,9 @@ class ErrorPage extends Component {
   }
 
   render() {
-    return <div className="page404" >
-		<Ghost mood="sad" color="#9bace4" size={250} className="ghost"/>
-		<h2><Trans value="404_page_not_found"/></h2>
+    return <div className={styles.page} >
+		<Ghost mood="sad" color="#9bace4" size={250} className={styles.ghost}/>
+		<h2 className={styles.title}><Trans value="404_page_not_found"/></h2>
 	</div>;
   }
 }

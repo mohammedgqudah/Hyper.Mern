@@ -2,11 +2,13 @@ import React, { Component } from "react";
 import { NavLink as Link } from "react-router-dom";
 import { connect } from "react-redux";
 
-import "./Navbar.scss";
+import styles from "./navbar.module.scss";
 import settings from "../../settings";
 import Avatar from "../Avatar/Avatar.jsx";
 import ChangeLanguageControl from "../ChangeLanguageControl/ChangeLanguageControl";
 import Trans from "../i18n/Trans";
+
+console.log('NAVBAR STYLES', styles);
 
 @connect(
   state => ({ logged_in: state.auth.logged_in }),
@@ -21,39 +23,40 @@ class Navbar extends Component {
   render() {
     let { logged_in } = this.props;
     return (
-      <nav className="Navbar">
-        <div className="title-box">
-          <h1 className="title">{settings.AppName}</h1>
+      <nav className={styles.navbar}>
+        <div className={styles.title_box}>
+          <h1 className={styles.title}>{settings.AppName}</h1>
         </div>
-        <div className="links">
+        <div className={styles.links}>
           <div>
             {settings.links.map(({ name, to, ...rest }, idx) => (
-              <Link key={idx} to={to} className="link" {...rest}>
+              <Link key={idx} to={to} className={styles.link} {...rest}>
                 <Trans value={`links.${name}`} />
               </Link>
             ))}
           </div>
         </div>
-        <div className="user-nav">
+        <div className={styles.user_nav}>
           {logged_in ? (
             <Avatar />
           ) : (
             <div>
               <Link
                 to={"/login"}
-                className="user-nav__Link user-nav__Link--small "
+                className={`${styles.button} ${styles.button}--small ${styles.button}`}
               >
                 <Trans value="login" />
               </Link>
+              {/* FIXME: outline not working */}
               <Link
                 to={"/signup"}
-                className="user-nav__Link user-nav__Link--small user-nav__Link--outline"
+                className={`${styles.button} ${styles.button}--small ${styles.button}--outline`}
               >
                 <Trans value="signup" />
               </Link>
             </div>
           )}
-          <span className="vr" />
+          <span className={styles.vr} />
           <ChangeLanguageControl />
         </div>
       </nav>

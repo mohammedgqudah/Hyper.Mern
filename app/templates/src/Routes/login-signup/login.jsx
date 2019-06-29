@@ -1,5 +1,5 @@
 import React from "react";
-import "./auth.scss";
+import styles from "./auth.module.scss";
 import { connect } from "react-redux";
 import { Redirect, Link } from "react-router-dom";
 import { mdiEmailOutline } from "@mdi/js";
@@ -41,25 +41,25 @@ class Auth extends React.Component {
     let { data, logged_in } = this.state;
     let { login_data } = this.props;
     let { password, id } = data;
-    let className = login_data.logging_in && "logging_in";
+    let btn_class_name = login_data.logging_in && "logging_in";
     return (
-      <div className={`AuthPage`}>
+      <div className={styles.page}>
         {logged_in && (
           <DelayedRedirect
             delay={settings.AfterAuthDelay}
             to={settings.AuthRedirectUrl}
           />
         )}
-        <div className={`form-container ${logged_in && "done"}`}>
-          <div className="main">
-            <h3 className="title">
+        <div className={`${styles.form_container} ${logged_in && "done"}`}>
+          <div className={styles.main}>
+            <h3 className={styles.title}>
               <Trans value="login" />
             </h3>
-            <h5 className="small">
+            <h5 className={styles.small}>
               <Trans value="fill_out_the_fields" />
             </h5>
             <form onSubmit={this.onLogin}>
-              <div className="fields">
+              <div className={styles.fields}>
                 <Input
                   placeholder={"Email or Username"}
                   style={{ width: 300 }}
@@ -79,16 +79,16 @@ class Auth extends React.Component {
                   error={<Trans value={login_data.password} />}
                   name="password"
                 />
-                <small className="error">
+                <small className={styles.error}>
                   <Trans value={login_data.main} />
                 </small>
-                <Link className="forgot-pass slink" to="/">
+                <Link className={`${styles.forgot_pass} slink`} to="/">
                   <Trans value="forgot_your_password?" />
                 </Link>
                 <Button
                   content={<Trans value="login" />}
                   type="submit"
-                  className={className}
+                  className={`${btn_class_name} ${styles.button}`}
                   disabled={login_data.logging_in}
                 />
               </div>

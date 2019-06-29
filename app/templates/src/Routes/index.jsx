@@ -15,6 +15,7 @@ import { Home, ErrorPage, ContactUs } from './LazyLoadRoutes.jsx';
 import login from './login-signup/login.jsx';
 import signup from './login-signup/signup.jsx';
 import { Scrollbars } from 'react-custom-scrollbars';
+
 class Routes extends Component {
 	constructor(props) {
 		super(props);

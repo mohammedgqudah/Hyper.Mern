@@ -1,5 +1,5 @@
 import React from "react";
-import "./auth.scss";
+import styles from "./auth.module.scss";
 import { connect } from "react-redux";
 import { Redirect, Link } from "react-router-dom";
 import { mdiEmailOutline } from "@mdi/js";
@@ -47,25 +47,25 @@ class Auth extends React.Component {
     let { data, logged_in } = this.state;
     let { signup_data } = this.props;
     let { password, email, name } = data;
-    let className = signup_data.signing_up && "logging_in";
+    let btn_class_name = signup_data.signing_up && "logging_in";
     return (
-      <div className={`AuthPage`}>
+      <div className={styles.page}>
         {logged_in && (
           <DelayedRedirect
             delay={settings.AfterAuthDelay}
             to={settings.AuthRedirectUrl}
           />
         )}
-        <div className={`form-container ${logged_in && "done"}`}>
-          <div className="main">
-            <h3 className="title">
+        <div className={`${styles.form_container} ${logged_in && "done"}`}>
+          <div className={styles.main}>
+            <h3 className={styles.title}>
               <Trans value="create_an_account" />
             </h3>
-            <h5 className="small">
+            <h5 className={styles.small}>
               <Trans value="fill_out_the_fields" />
             </h5>
             <form onSubmit={this.onSignup}>
-              <div className="fields">
+              <div className={styles.fields}>
                 <Input
                   placeholder={"Email"}
                   style={{ width: 300 }}
@@ -91,16 +91,16 @@ class Auth extends React.Component {
                   data={password}
                   error={<Trans value={signup_data.password} />}
                 />
-                <small className="error">
+                <small className={styles.error}>
                   <Trans value={signup_data.main}/>
                 </small>
-                <Link to="/login" className="slink">
+                <Link to="/login" className={`${styles.forgot_pass} slink`}>
                   <Trans value="already_have_an_account?" />
                 </Link>
                 <Button
                   content={<Trans value="signup" />}
                   type="submit"
-                  className={className}
+                  className={`${btn_class_name} ${styles.button}`}
                   disabled={signup_data.signing_up}
                 />
               </div>

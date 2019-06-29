@@ -1,0 +1,51 @@
+@import "settings.scss";
+@import "animate.scss";
+@import "shared.scss";
+
+.page {
+  display: flex;
+  justify-content: center;
+}
+.form_container {
+  transition: all 400ms ease-in-out;
+  position: relative;
+  @extend .animated;
+  animation: scaleIn 100ms ease-in;
+  &.done {
+    opacity: 0;
+  }
+}
+.forgot_pass {
+  margin: 0.8rem;
+}
+.main {
+  padding-top: 2rem;
+}
+.small {
+  font-size: 1rem;
+  font-weight: 200;
+  margin: 1.5rem;
+  text-align: center;
+  color: grey;
+}
+small.error {
+  font-style: italic;
+  color: #ff4444;
+}
+.title {
+  font-weight: 700;
+  font-size: 2rem;
+  margin: 1.5rem;
+  text-align: center;
+  color: $primary;
+}
+.fields {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+.button {
+  transition: font-size 100ms ease-in;
+  @include flex-center;
+}

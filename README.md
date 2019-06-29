@@ -19,7 +19,7 @@ This stack gets you up and running with dev absolutes. Webpack Dev Server for HM
 - Auto Generated Identicon For Each User
 - Redux + React Redux
 - Lazy Loading/Dynamic Imports for Each Route
-- SASS
+- SASS + (S)CSS modules
 - Babel 7 + Webpack 4
 - Webpack Dev Server + Express API Server
 - HMR for CSS/SASS/LESS

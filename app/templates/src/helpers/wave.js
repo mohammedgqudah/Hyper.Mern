@@ -1,5 +1,5 @@
-export default (id) => {
-    var c = document.getElementById(id),
+export default (el) => {
+    var c = el,
         ctx = c.getContext('2d'),
         cw = c.width = window.innerWidth,
         ch = c.height = window.innerHeight,
