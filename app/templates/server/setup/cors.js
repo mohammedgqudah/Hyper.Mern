@@ -6,7 +6,7 @@ export default app => {
     origin: function(origin, callback) {
       callback(null, whitelist.indexOf(origin) !== -1);
     },
-    credentials: true,
+    credentials: true
   };
   app.use(cors(corsOptions));
 };

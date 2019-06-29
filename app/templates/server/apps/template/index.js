@@ -1,7 +1,7 @@
 import express from 'express';
 
 const app = express.Router();
-import {  } from './template.controller';
+import {} from './template.controller';
 
 // passport.authenticate('jwt', { session: false })
 

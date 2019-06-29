@@ -5,17 +5,14 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 
-const routes = [
-	'/',
-	'/subpage'
-];
+const routes = ['/', '/subpage'];
 
-router.get("*", (req, res, next) => {
-	if (routes.includes(req.url)) {
-		res.sendFile(path.join(__dirname, '../public/index.html'));
-	} else {
-		next();
-	}
+router.get('*', (req, res, next) => {
+  if (routes.includes(req.url)) {
+    res.sendFile(path.join(__dirname, '../public/index.html'));
+  } else {
+    next();
+  }
 });
 
 module.exports = router;

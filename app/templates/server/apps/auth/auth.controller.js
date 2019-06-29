@@ -1,10 +1,10 @@
-import Joi from "@hapi/joi";
-import mongoose from "mongoose";
+import Joi from '@hapi/joi';
+import mongoose from 'mongoose';
 
-import { hashPassword, comparePassword, token } from "./auth.service";
-import { LOGIN_SCHEMA, SIGNUP_SCHEMA } from "./auth.validators";
+import { hashPassword, comparePassword, token } from './auth.service';
+import { LOGIN_SCHEMA, SIGNUP_SCHEMA } from './auth.validators';
 
-const User = mongoose.model("User");
+const User = mongoose.model('User');
 
 const LOGIN = async (req, res) => {
   // @id could be name or email
@@ -24,7 +24,7 @@ const LOGIN = async (req, res) => {
         } else res.status(400).send({});
       }
     } catch (error) {
-      console.log("e500", error);
+      console.log('e500', error);
       res.status(500).send({ error });
     }
   }
@@ -44,13 +44,13 @@ const SIGNUP = async (req, res) => {
       let _token = token({ id: user._id }, process.env.TOKEN_EXPIRY_DATE);
       res.send({ token: _token, user });
     } catch (error) {
-      if (error.name === "ValidationError") {
+      if (error.name === 'ValidationError') {
         res.status(409).send({
-          code: "Duplicate",
+          code: 'Duplicate',
           errors: Object.keys(error.errors)
         });
       } else {
-        console.log("Error", error);
+        console.log('Error', error);
         res.status(500).send({ error });
       }
     }

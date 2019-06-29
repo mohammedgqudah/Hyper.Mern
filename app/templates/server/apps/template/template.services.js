@@ -1,4 +1,1 @@
-
-module.exports.HELPER = async () => {
-
-}
+module.exports.HELPER = async () => {};

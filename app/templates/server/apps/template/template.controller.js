@@ -3,9 +3,9 @@ const Joi = require('@hapi/joi');
 const { SAMPLE } = require('./template.validators');
 // const {  } = require('../../db/models/model.js')
 
-const InvalidBody = {next: false};
+const InvalidBody = { next: false };
 
-// e.g 
+// e.g
 
 // const SAMPLE = async (req, res) => {
 //     let schema = SAMPLE;

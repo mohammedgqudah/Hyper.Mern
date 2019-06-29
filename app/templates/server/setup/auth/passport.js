@@ -1,5 +1,5 @@
-import Passport from "passport";
-import PassportJWT from "passport-jwt";
+import Passport from 'passport';
+import PassportJWT from 'passport-jwt';
 
 const configJWTStrategy = () => {
   let options = {
@@ -10,7 +10,7 @@ const configJWTStrategy = () => {
   Passport.use(
     new PassportJWT.Strategy(options, async ({ id }, done) => {
       try {
-        let user = await UserModel.findOne({ _id: id });
+        let user = await global.UserModel.findOne({ _id: id });
         if (user) return done(null, { ...user._doc });
         else return done(null, false);
       } catch (err) {

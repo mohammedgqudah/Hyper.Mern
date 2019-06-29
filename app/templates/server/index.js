@@ -1,12 +1,12 @@
 /* eslint no-undefined: "off" */
 
 import path from 'path';
-import express  from 'express';
-import compression  from 'compression';
-import helmet  from 'helmet';
-import bodyParser  from 'body-parser';
+import express from 'express';
+import compression from 'compression';
+import helmet from 'helmet';
+import bodyParser from 'body-parser';
 
-const app  = express();
+const app = express();
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
 

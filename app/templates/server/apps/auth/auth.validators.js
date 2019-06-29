@@ -1,4 +1,4 @@
-import Joi from "@hapi/joi";
+import Joi from '@hapi/joi';
 
 export const LOGIN_SCHEMA = Joi.object()
   .options({ abortEarly: false })

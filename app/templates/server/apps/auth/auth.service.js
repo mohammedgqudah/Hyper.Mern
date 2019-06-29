@@ -1,9 +1,9 @@
-import bcrypt from "bcryptjs";
-import jwt from "jsonwebtoken";
+import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
 
 const hashPassword = password => {
-  var salt = bcrypt.genSaltSync(10);
-  var hash = bcrypt.hashSync(password, salt);
+  let salt = bcrypt.genSaltSync(10);
+  let hash = bcrypt.hashSync(password, salt);
   return hash;
 };
 const comparePassword = (password, hash) => {

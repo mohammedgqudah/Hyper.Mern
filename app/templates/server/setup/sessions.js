@@ -12,7 +12,7 @@ export default app => {
       cookie: { maxAge: 600000 },
       store: process.env.DB_URI
         ? new MongoStore({ mongooseConnection: mongoose.connection })
-        : undefined,
+        : null
     })
   );
 };
