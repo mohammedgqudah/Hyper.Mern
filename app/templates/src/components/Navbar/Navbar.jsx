@@ -30,7 +30,13 @@ class Navbar extends Component {
         <div className={styles.links}>
           <div>
             {settings.links.map(({ name, to, ...rest }, idx) => (
-              <Link key={idx} to={to} className={styles.link} {...rest}>
+              <Link
+                key={idx}
+                to={to}
+                className={styles.link}
+                {...rest}
+                activeClassName={styles.active}
+              >
                 <Trans value={`links.${name}`} />
               </Link>
             ))}
@@ -43,14 +49,18 @@ class Navbar extends Component {
             <div>
               <Link
                 to={'/login'}
-                className={`${styles.button} ${styles.button}--small ${styles.button}`}
+                className={`${styles.button} ${styles.button}--small`}
               >
                 <Trans value="login" />
               </Link>
               {/* FIXME: outline not working */}
               <Link
                 to={'/signup'}
-                className={`${styles.button} ${styles.button}--small ${styles.button}--outline`}
+                className={[
+                  styles.button,
+                  `${styles.button}--small`,
+                  `${styles.button}--outline`
+                ].join(' ')}
               >
                 <Trans value="signup" />
               </Link>
