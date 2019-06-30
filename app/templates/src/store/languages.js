@@ -3,7 +3,7 @@ export default {
     welcome: 'Welcome to',
     description: '<%= description %>',
     links: {
-      Home: 'home',
+      Home: 'Home',
       App: 'App',
       'Contact us': 'Contact Us',
       'About us': 'About Us'
