@@ -15,6 +15,6 @@ $shadow-5: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
 //
 $br: 10px;
 $navbar-height: 5rem;
-$full-height: calc(100% - #{$navbar-height});
+$page-pad: $navbar-height + 2rem;
 // breakpoints
 $bp1: 725px;

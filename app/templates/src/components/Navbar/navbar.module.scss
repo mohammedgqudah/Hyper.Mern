@@ -1,14 +1,29 @@
-@import "settings.scss";
-@import "Button";
+@import 'settings.scss';
+@import 'Button';
 
 .navbar {
-  box-shadow: $shadow-1;
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  left: 0;
   padding: 1rem 2rem;
   min-height: $navbar-height;
-  background-color: $primary;
+  width: 100%;
   display: flex;
   align-items: center;
   color: $white;
+  transition: all 500ms ease;
+  background: transparent;
+}
+.scrolled {
+  box-shadow: $shadow-1;
+  background: $primary;
+}
+.primary {
+  background: $primary;
+}
+.hide {
+  transform: translateY(-100%);
 }
 .title_box {
   display: flex;
@@ -30,10 +45,11 @@
 .link {
   border: none;
   color: inherit;
-  font-family: "Raleway";
+  font-family: 'Raleway';
   font-weight: 400;
   opacity: 0.7;
   margin: 0 0.5rem;
+  cursor: pointer;
   &.active {
     font-weight: 700;
     opacity: 1;
@@ -49,6 +65,13 @@
 .button {
   @include Button($white, $primary);
   margin: 0 0.5rem;
+}
+.ul {
+  padding: 0;
+  list-style-type: none;
+  display: inline-flex;
+}
+.li {
 }
 /* MEDIA QURIES */
 @media only screen and (max-width: $bp1) {

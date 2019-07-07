@@ -3,7 +3,8 @@
 
 .contact_us {
   @include flex-center;
-  height: $full-height;
+  height: 100vh;
+  padding-top: $page-pad;
 }
 .card {
   animation: scaleIn 300ms ease-in-out;

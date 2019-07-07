@@ -5,6 +5,7 @@
 .page {
   display: flex;
   justify-content: center;
+  padding-top: $page-pad;
 }
 .form_container {
   transition: all 400ms ease-in-out;

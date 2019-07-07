@@ -14,7 +14,7 @@ import './styles/reset.css';
 import './styles/animate.scss';
 import './styles/main.scss';
 /* App is the entry point to the React code.*/
-import Routes from './Routes/index.jsx';
+import Routes from './Routes/routes.client';
 
 const store = configStore();
 

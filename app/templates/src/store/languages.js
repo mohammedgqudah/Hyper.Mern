@@ -6,7 +6,8 @@ export default {
       Home: 'Home',
       App: 'App',
       'Contact us': 'Contact Us',
-      'About us': 'About Us'
+      'About us': 'About Us',
+      other: 'Other'
     },
     '404_page_not_found': '404 Page Not Found',
     "we'd_love_to_hear_from_you": "We'd love to hear from you",
@@ -24,7 +25,7 @@ export default {
       'Something went wrong, try again or check the internet connection',
     enter_a_valid_email: 'Enter a valid Email',
     "name_can't_be_empty": "Name can't be empty",
-    already_in_use: 'Already in use'
+    already_in_use: 'Already in use',
   },
   ar: {
     welcome: 'مرحبا بك في',
@@ -33,7 +34,8 @@ export default {
       Home: 'رئيسية',
       App: 'برنامج',
       'Contact us': 'اتصل بنا',
-      'About us': 'نبذة'
+      'About us': 'نبذة',
+      other: `أخرى`
     },
     '404_page_not_found': 'صفحة غير موجودة',
     "we'd_love_to_hear_from_you": 'ننتظر منك على',

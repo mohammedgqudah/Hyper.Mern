@@ -1,32 +1,30 @@
-@import "shared.scss";
-.home {
-    position: relative;
-    padding-top: 30vh;
-    padding-bottom: 1rem;
-}
-#waves {
-    position: absolute;
-    z-index: 0;
-    top: 0;
-    left: 0;
-    display: block;
-    width: 100%;
-    height: 35vh;
-    transform: rotate(180deg);
+@import 'shared.scss';
+@import 'settings.scss';
+.page {
+  position: relative;
+  min-height: 200vh;
 }
 .title {
-    text-align: center;
-    font-size: 2rem;
-    font-family: 'Raleway'    
+  text-align: center;
+  font-size: 2rem;
+  font-family: 'Raleway';
 }
 .description {
-    margin: 1.5rem 0;
-    text-align: center;
-    font-size: 1.5rem;
-    color: grey;
-    font-weight: 400;
-    font-family: 'Raleway';
+  margin: 1.5rem 0;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #eee;
+  font-weight: 400;
+  font-family: 'Raleway';
 }
-.center {   
-    @include flex-center;
+.bg {
+  height: 70vh;
+  padding-top: $page-pad;
+  background-image: linear-gradient(
+    to right bottom,
+    $primary,
+    lighten($primary, 10%)
+  );
+  @include flex-center();
+  flex-direction: column;
 }

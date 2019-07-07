@@ -21,12 +21,21 @@ class Routes extends Component {
     super(props);
     this.state = {};
   }
+  registerOnScroll = cb => {
+    this._onScroll = cb;
+  };
+  onScroll = values => {
+    this._onScroll(values);
+  };
   render() {
     return (
       <div className="routes-container">
-        <Scrollbars style={{ width: '100%', height: '100%' }}>
-          <Navbar />
-          <Switch className="main">
+        <Scrollbars
+          style={{ width: '100%', height: '100%' }}
+          onUpdate={this.onScroll}
+        >
+          <Navbar registerOnScroll={this.registerOnScroll} autoHide />
+          <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/contact-us" component={ContactUs} />
             <Route path="/login" component={login} />
