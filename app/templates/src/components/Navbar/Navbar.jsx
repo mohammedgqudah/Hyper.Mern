@@ -8,6 +8,8 @@ import Avatar from '../Avatar/Avatar.jsx';
 import ChangeLanguageControl from '../ChangeLanguageControl/ChangeLanguageControl';
 import Trans from '../i18n/Trans';
 import SETTINGS from '../../settings';
+import Dropdown from '../Dropdown/Dropdown';
+import DropdownList from '../DropdownList/DropdownList';
 
 @withRouter
 @connect(
@@ -73,6 +75,7 @@ class Navbar extends Component {
   render() {
     let { logged_in } = this.props;
     let { scrolled, hide, primary, bg } = this.state;
+    let other_list = [{ to: '/app', content: 'download the app' }];
     return (
       <nav
         className={[
@@ -90,9 +93,8 @@ class Navbar extends Component {
         <div className={styles.links}>
           <ul className={styles.ul}>
             {settings.links.map(({ name, to, ...rest }, idx) => (
-              <li className={styles.li}>
+              <li className={styles.li} key={idx}>
                 <Link
-                  key={idx}
                   to={to}
                   className={styles.link}
                   {...rest}
@@ -102,9 +104,14 @@ class Navbar extends Component {
                 </Link>
               </li>
             ))}
-            <li className={[styles.li, styles.link].join(' ')}>
-              <Trans value={`links.other`} />
-            </li>
+            <Dropdown render={<DropdownList list={other_list} />}>
+              <li className={[styles.li].join(' ')}>
+                <span className={[styles.link].join(' ')}>
+                  <Trans value={`links.other`} />
+                  <span className={styles.arrow} />
+                </span>
+              </li>
+            </Dropdown>
           </ul>
         </div>
         <div className={styles.user_nav}>

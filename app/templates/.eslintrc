@@ -24,7 +24,7 @@
 	},
 
 	"rules": {
-		"prettier/prettier": "error",
+		"prettier/prettier": 1,
 		"react/jsx-uses-vars": 2,
 		"camelcase": 0,
 		"no-unused-vars": 0,

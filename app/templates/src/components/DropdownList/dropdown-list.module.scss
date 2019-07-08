@@ -1,0 +1,14 @@
+.list {
+  list-style-type: none;
+  padding-left: 0;
+}
+.item {
+  padding: 0.3rem;
+  border-radius: 3px;
+  transition: all 400ms ease-in-out;
+  font-size: 0.8rem;
+  cursor: pointer;
+  &:hover {
+    background-color: rgba(0,0,0,0.13);
+  }
+}

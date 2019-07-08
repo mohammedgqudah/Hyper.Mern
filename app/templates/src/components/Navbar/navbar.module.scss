@@ -47,12 +47,27 @@
   color: inherit;
   font-family: 'Raleway';
   font-weight: 400;
+  font-size: 0.8rem;
   opacity: 0.7;
   margin: 0 0.5rem;
   cursor: pointer;
   &.active {
     font-weight: 700;
     opacity: 1;
+  }
+}
+.arrow {
+  $url: '/assets/img/icons/dropdown-arrow.svg';
+  &::after {
+    display: inline-block;
+    content: '';
+    margin-left: 0.3rem;
+    background-image: url($url);
+    width: 10px;
+    background-position: center;
+    height: 10px;
+    background-repeat: no-repeat;
+    background-size: 60%;
   }
 }
 .user_nav {
